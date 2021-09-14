@@ -1,3 +1,4 @@
+
 const quizData = [
 	{
 		name: "Astronomy Quiz",
