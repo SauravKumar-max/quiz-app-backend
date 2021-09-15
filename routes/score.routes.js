@@ -23,7 +23,7 @@ router.route('/allscores')
 .get(async (req, res) => {
 	try{
 		const user = await User.find();
-		const allScores = user.map( user => user.score );
+		const allScores = user.map( user => ({ _id: user._id, name: user.name, score: user.score }));
 		res.json({ succes: true, allScores });
 	}catch(error){
 		res.json({success: false, errorMessage: "Unable to get Scores"});
