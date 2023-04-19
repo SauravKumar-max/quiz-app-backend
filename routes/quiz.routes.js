@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const { quizData } = require("../db/data");
+// const { quizData } = require("../db/data");
 const { Quiz } = require("../models/quiz.models");
 
 router
@@ -8,8 +8,8 @@ router
   .get(async (req, res) => {
     try {
       // const quiz = await Quiz.insertMany(quizData);
-      // const quiz = await Quiz.find();
-      res.json({ quiz: quizData });
+      const quiz = await Quiz.find();
+      res.json({ quiz });
     } catch (error) {
       console.log(error);
     }
